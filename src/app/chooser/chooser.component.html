@@ -1,0 +1,19 @@
+<body>
+<div class="container">
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  @for (event of events; track event) {
+    <div class="example-box" cdkDrag>{{event}}</div>
+  }
+</div>
+
+<button (click)="validarOrden()">Validar</button>
+</div>
+
+<div *ngIf="mostrarMensajeError" class="modal-overlay">
+  <div class="modal">
+    <p>INCORRECTO, VUELVA A INTENTAR EN:</p>
+    <div class="cronometro">{{ formatoCuentaAtras }}</div>
+  </div>
+</div>
+
+</body>
