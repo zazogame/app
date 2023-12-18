@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './songtest.component.css'
 })
 export class SongtestComponent {   fraseCeslebre = '"El 1_________ nunca cae lejos del árbol. El 2__________ tampoco."';
-palabrasReemplazar: string[] = ['ejemplo', 'segundo']; // Palabras que se deben reemplazar
+palabrasReemplazar: string[] = ['', '']; // Palabras que se deben reemplazar
 palabrasIngresadas: string[] = ['', ''];
 resultado = '';
 @Output() cambioUltimoPuzzle = new EventEmitter<boolean>();

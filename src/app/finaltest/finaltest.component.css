@@ -1,29 +1,94 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #282c34;
+  color: #61dafb;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Estilos para el contenedor de Pokémon */
+.pokemon-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la imagen de Pokémon */
+.pokemon-image {
+  height: 200px;
+  width: 200px;
+  border: 2px solid limegreen;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para la etiqueta del nombre del Pokémon */
+.pokemon-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Estilos para el input de Pokémon */
+.pokemon-input {
+  padding: 8px;
+  border: 2px solid limegreen;
+  border-radius: 5px;
+  background-color: #282c34;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de Pokémon */
+.pokemon-button {
+  padding: 10px;
+  background-color: limegreen;
+  color: #282c34;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón de reset */
+.reset-button {
+  padding: 10px;
+  background-color: #c34a4a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el modal overlay */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Valor alto para que esté por encima de otros elementos */
-  }
-  
-  /* Estilos para el modal */
-  .modal {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  /* Resto de estilos... */
-  /* Estilos para el cronómetro */
-  .cronometro {
-    font-family: "Courier New", Courier, monospace; /* Fuente monoespaciada similar a un cronómetro */
-    font-size: 2em; /* Tamaño grande */
-    margin-top: 10px; /* Espacio entre el mensaje y el cronómetro */
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Estilos para el modal */
+.modal {
+  background-color: rgb(30, 30, 30);
+  padding: 20px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Estilos para el cronómetro */
+.cronometro {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2em;
+  margin-top: 10px;
+  color: white;
+}

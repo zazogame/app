@@ -1,4 +1,7 @@
 /* styles.css */
+:root{
+  background-color: black;
+}
 body {
   font-family: 'Courier New', Courier, monospace;
   background-color: black;
@@ -18,25 +21,25 @@ body {
 }
 
 .example-list {
-  width: 100%; /* Hacer que la lista sea 100% del an
+  width: 100%; 
 
-
+}
 .container {
-  background-color: #f0f0f0;
+  background-color: black;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
   width: 80%;
-  max-width: 100%; /* Hacer que el contenedor sea 100% del ancho */
+  max-width: 100%; 
 }
 
 .example-list {
   width: 100%; /* Hacer que la lista sea 100% del ancho */
-  border: solid 1px #ccc;
+  border: solid 1px #444b4d;
   min-height: 60px;
   display: block;
-  background: white;
+  background: #697276;
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 5px;
@@ -44,7 +47,7 @@ body {
 
 .example-box {
   padding: 20px 10px;
-  border-bottom: solid 1px #ccc;
+  border-bottom: solid 1px #444b4d;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: row;
@@ -52,8 +55,9 @@ body {
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: white;
+  background: #697276;
   font-size: 14px;
+  color: white;
 }
 
 /* Agregar estilos para pantallas más pequeñas (menos de 600px de ancho) */
@@ -120,7 +124,8 @@ button:hover {
 
 /* Estilos para el modal */
 .modal {
-  background-color: #fff;
+  background-color: rgb(30, 30, 30);
+  color: white;
   padding: 20px;
   border-radius: 8px;
   text-align: center;

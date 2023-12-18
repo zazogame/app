@@ -4,7 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { timer } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-finaltest',
@@ -21,8 +22,14 @@ export class FinaltestComponent implements OnInit{
   mostrarMensajeError = false;
   cuentaAtras = 10;
   formatoCuentaAtras = '00:10.0';
-
-  constructor(private pokeApiService: PokemonService) {}
+  aciertos: number = 0;
+  timerValue: number = 0;
+  private timerSubscription: Subscription | undefined;
+  constructor(private pokeApiService: PokemonService, private timerService: TimerService) {
+    this.timerSubscription = this.timerService.getTimer().subscribe((value) => {
+      this.timerValue = value;
+    });
+  }
 
   ngOnInit(): void {
     this.getRandomPokemonImage();
@@ -35,7 +42,8 @@ export class FinaltestComponent implements OnInit{
         this.currentPokemonName = response.data.name;
       },
       (error) => {
-        console.error('Error fetching random Pokémon:', error);
+        this.imageUrl = "/src/assets/img/vaporeon.png";
+        this.currentPokemonName = "Vaporeon";
       }
     );
   }
@@ -43,26 +51,34 @@ export class FinaltestComponent implements OnInit{
   checkPokemon(): void {
     if (this.enteredPokemonName && this.enteredPokemonName.toLowerCase() === this.currentPokemonName) {
       alert('¡Correcto! ¡Ese es el Pokémon correcto!');
+      this.aciertos++;
+      if (this.aciertos < 3) {
+        this.resetPokemon(1);
+      }
+      else{
+        this.timerService.stopTimer();
+        console.log(this.timerValue)
+      }
     } else {
       alert('Incorrecto. ¡Inténtalo de nuevo!');
       console.log(this.currentPokemonName);
     }
   }
 
-  resetPokemon(): void {
-    
+  resetPokemon(timeottime=10000): void {
     this.isChecking = true;
-    this.mostrarMensajeError=true;
+    this.mostrarMensajeError = true;
     this.iniciarCuentaAtras();
-    // timer(1).subscribe(() => {
-    //   this.isChecking = false;
-    //   this.getRandomPokemonImage();
-    // });
     setTimeout(() => {
       this.mostrarMensajeError = false;
       this.isChecking = false;
       this.getRandomPokemonImage();
-    }, 10000);
+    }, timeottime);
+  }
+
+  finalizarJuego(): void {
+    // Lógica para finalizar el juego (recargar la página, por ejemplo)
+    location.reload();
   }
 
   iniciarCuentaAtras(): void {

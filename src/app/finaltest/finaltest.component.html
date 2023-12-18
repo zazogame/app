@@ -1,15 +1,22 @@
-<div *ngIf="imageUrl">
-    <img [src]="imageUrl" alt="Random Pokémon" />
-    <br />
-    <label for="pokemonNameInput">Nombre del Pokémon:</label>
-    <input type="text" id="pokemonNameInput" [(ngModel)]="enteredPokemonName" />
-    <button (click)="checkPokemon()">Comprobar</button>
-  </div>
-  <button (click)="resetPokemon()">Cambiar de Pokémon (10s)</button>
+<p>Aciertos ({{aciertos}}/3)</p>
+<div *ngIf="imageUrl" class="pokemon-container">
+  <img [src]="imageUrl" alt="Random Pokémon" class="pokemon-image" />
+  <br />
+  <label for="pokemonNameInput" class="pokemon-label">Nombre del Pokémon:</label>
+  <input type="text" id="pokemonNameInput" [(ngModel)]="enteredPokemonName" class="pokemon-input" />
+  <button (click)="checkPokemon()" class="pokemon-button">Comprobar</button>
+</div>
+<button (click)="resetPokemon()" class="reset-button">Cambiar de Pokémon (10s)</button>
 
-  <div *ngIf="mostrarMensajeError" class="modal-overlay">
-    <div class="modal">
-      <p style="color: orange">RESETEANDO POKÉMON...</p>
-      <div style="color: orange;" class="cronometro">{{ formatoCuentaAtras }}</div>
-    </div>
+<div *ngIf="mostrarMensajeError" class="modal-overlay">
+  <div class="modal">
+      <p style="color: white">RESETEANDO POKÉMON...</p>
+      <div style="color: white;" class="cronometro">{{ formatoCuentaAtras }}</div>
   </div>
+</div>
+<div *ngIf="aciertos>=3" class="modal-overlay">
+  <div class="modal">
+      <p style="color: limegreen">¡¡FELICIDADES!! ¡¡HABÉIS TERMINADO!!</p>
+      <p>Tiempo Total = {{this.timerValue}} segundos </p>
+  </div>
+</div>

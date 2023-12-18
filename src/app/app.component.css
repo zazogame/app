@@ -2,16 +2,14 @@
 :root {
     color-scheme: light dark;
   }
-  
   body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: black;
     color: limegreen;
-    margin: 0;
     display: flex;
+    margin: 0;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    padding: 10px;
   }
   
   .container {
