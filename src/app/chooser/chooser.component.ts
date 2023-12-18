@@ -12,8 +12,8 @@ import { FinaltestComponent } from '../finaltest/finaltest.component';
   styleUrl: './chooser.component.css'
 })
 export class ChooserComponent implements OnInit{
-  events = ['Evento Primero', 'Evento Segundo', 'Evento Tercero', 'Evento Cuarto'];
-  correctOrder = ['Evento Primero', 'Evento Segundo', 'Evento Tercero', 'Evento Cuarto'];
+  events = ['Salida de Animal Crossing 1','Estreno Harry Potter 1', 'Estreno Attack On Titan', 'Aitana entra a OT', 'Nos confinan por el Covid'];
+  correctOrder = ['Salida de Animal Crossing 1','Estreno Harry Potter 1', 'Estreno Attack On Titan', 'Aitana entra a OT', 'Nos confinan por el Covid'];
   mostrarMensajeError = false;
   cuentaAtras = 10;
   formatoCuentaAtras = '00:10.0';

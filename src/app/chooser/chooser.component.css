@@ -1,7 +1,4 @@
 /* styles.css */
-:root{
-  background-color: black;
-}
 body {
   font-family: 'Courier New', Courier, monospace;
   background-color: black;
@@ -24,18 +21,14 @@ body {
   width: 100%; 
 
 }
-.container {
-  background-color: black;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  width: 80%;
-  max-width: 100%; 
+h2{
+  font-size: 4vh;
 }
-
+p{
+  font-size: 2.5vh;
+}
 .example-list {
-  width: 100%; /* Hacer que la lista sea 100% del ancho */
+  width: 100%;
   border: solid 1px #444b4d;
   min-height: 60px;
   display: block;
@@ -56,16 +49,21 @@ body {
   box-sizing: border-box;
   cursor: move;
   background: #697276;
-  font-size: 14px;
   color: white;
+  font-size: 2vh; /* Ajusta el tamaño de la fuente según tu preferencia */
+  overflow: hidden; /* Recorta el contenido si es demasiado largo */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos (...) cuando el texto está recortado */
 }
 
 /* Agregar estilos para pantallas más pequeñas (menos de 600px de ancho) */
 @media (max-width: 600px) {
   .example-box {
-    font-size: 12px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    font-size: 14px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas si es necesario */
   }
 }
+
+
 
 /* Resto de los estilos permanecen igual */
 

@@ -1,11 +1,9 @@
-<body>
+
 <div class="container">
-  <h1>ZAZOGAME</h1>
+  <h1 *ngIf="!showChooser" class="titulo">ZAZOGAME</h1>
   <div *ngIf="!showChooser">
     <h4>Terminad las pruebas lo más rápido posible para ganar</h4>
-    <p class="command-line">Dale al botón para comenzar</p>
     <button (click)="startGame()">Comenzar</button>
   </div>
   <app-chooser *ngIf="showChooser"></app-chooser>
 </div>
-</body>

@@ -2,15 +2,6 @@
 :root {
     color-scheme: light dark;
   }
-  body {
-    font-family: 'Courier New', Courier, monospace;
-    color: limegreen;
-    display: flex;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-  }
   
   .container {
     text-align: center;
@@ -19,23 +10,21 @@
     border-radius: 5px;
     background-color: black;
     box-shadow: 0 0 10px limegreen;
+    height: 100vh;
   }
-  
-  h1 {
+  .titulo{
+    font-size: 6vh;
+  }
+  h1,h2,h3,h4,h5,p {
     color: limegreen;
-    font-size: 2em;
-  }
-  
-  .command-line {
-    margin-top: 20px;
-    font-size: 16px;
-    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3vh;
   }
   
   /* Opcional: Estilo para el botón */
   button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
     background-color: limegreen;
     color: black;
     border: none;
