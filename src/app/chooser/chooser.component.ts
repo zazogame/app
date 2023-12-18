@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
+import { SongtestComponent } from '../songtest/songtest.component';
+import { FormsModule } from '@angular/forms';
+import { FinaltestComponent } from '../finaltest/finaltest.component';
 @Component({
   selector: 'app-chooser',
   standalone: true,
-  imports: [CommonModule, CdkDropList,CdkDrag],
+  imports: [CommonModule, CdkDropList,CdkDrag, SongtestComponent, FormsModule, FinaltestComponent],
   templateUrl: './chooser.component.html',
   styleUrl: './chooser.component.css'
 })
@@ -14,9 +17,18 @@ export class ChooserComponent implements OnInit{
   mostrarMensajeError = false;
   cuentaAtras = 10;
   formatoCuentaAtras = '00:10.0';
+  showPuzzle: boolean = false;
+  mostrarCorrecto = false;
+  ultimopuzzle: boolean = false;
 
   ngOnInit() {
     this.shuffleEvents();
+  }
+  cambiarUltimoPuzzle(valor: boolean) {
+    this.ultimopuzzle = valor;
+    if(this.ultimopuzzle){
+      this.showPuzzle=false;
+    }
   }
   private shuffleEvents(): void {
     for (let i = this.events.length - 1; i > 0; i--) {
@@ -32,7 +44,9 @@ export class ChooserComponent implements OnInit{
   validarOrden(): void {
     const ordenCorrecto = JSON.stringify(this.events) === JSON.stringify(this.correctOrder);
     if (ordenCorrecto) {
-      alert('El orden es correcto.');
+      alert("CORRECTO! Siguiente prueba...")
+      this.showPuzzle = true;
+    
     } else {
       this.mostrarMensajeError = true;
       this.iniciarCuentaAtras();

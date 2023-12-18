@@ -1,0 +1,9 @@
+<div>
+    <p>{{ fraseCeslebre }}</p>
+    <div *ngFor="let palabra of palabrasReemplazar; let i = index">
+      <input [(ngModel)]="palabrasIngresadas[i]" placeholder="Ingresa la palabra {{ i + 1 }}">
+    </div>
+    <button (click)="comprobarPalabras()">Comprobar</button>
+    <p *ngIf="resultado">{{ resultado }}</p>
+  </div>
+  

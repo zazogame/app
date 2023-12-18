@@ -1,1 +1,9 @@
-<app-chooser></app-chooser>
+<!-- app.component.html -->
+<div class="container">
+  <h1>ZAZOGAME</h1>
+  <div *ngIf="!showChooser">
+    <p class="command-line">Dale al botón para comenzar</p>
+    <button (click)="startGame()">Empezar</button>
+  </div>
+  <app-chooser *ngIf="showChooser"></app-chooser>
+</div>

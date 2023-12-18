@@ -1,10 +1,25 @@
+/* styles.css */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: limegreen;
   margin: 0;
 }
+
+.container {
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  max-width: 100%; /* Hacer que el contenedor sea 100% del ancho */
+  margin: 20px auto; /* Centrar el contenedor en la parte superior */
+}
+
+.example-list {
+  width: 100%; /* Hacer que la lista sea 100% del an
+
 
 .container {
   background-color: #f0f0f0;

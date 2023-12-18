@@ -1,19 +1,41 @@
-<body>
+<body *ngIf="!showPuzzle && !ultimopuzzle">
 <div class="container">
+  <h2>PRUEBA 1/3</h2>
+  <p>Ordena estos hechos históricos en orden (primero el más antiguo)</p>
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
   @for (event of events; track event) {
     <div class="example-box" cdkDrag>{{event}}</div>
   }
 </div>
 
-<button (click)="validarOrden()">Validar</button>
+<button (click)="validarOrden()">Enviar</button>
 </div>
 
 <div *ngIf="mostrarMensajeError" class="modal-overlay">
   <div class="modal">
-    <p>INCORRECTO, VUELVA A INTENTAR EN:</p>
+    <p style="color: red">INCORRECTO, VUELVE A INTENTARLO EN:</p>
+    <div style="color: red;" class="cronometro">{{ formatoCuentaAtras }}</div>
+  </div>
+</div>
+<div *ngIf="mostrarCorrecto" class="modal-overlay">
+  <div class="modal">
+    <p>¡CORRECTO!</p>
     <div class="cronometro">{{ formatoCuentaAtras }}</div>
   </div>
 </div>
 
 </body>
+<body *ngIf="showPuzzle">
+  <div class="container">
+    <h2>PRUEBA 2/3</h2>
+    <p>Completa el temardo</p>
+    <app-songtest (cambioUltimoPuzzle)="cambiarUltimoPuzzle($event)"></app-songtest>
+  </div>
+  </body>
+  <body *ngIf="ultimopuzzle">
+    <div class="container">
+      <h2>PRUEBA 3/3</h2>
+      <p>Escribe el nombre de trés Pokémon correctamente</p>
+      <app-finaltest></app-finaltest>
+    </div>
+    </body>

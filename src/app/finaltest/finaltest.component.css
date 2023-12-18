@@ -1,0 +1,29 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Valor alto para que esté por encima de otros elementos */
+  }
+  
+  /* Estilos para el modal */
+  .modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Resto de estilos... */
+  /* Estilos para el cronómetro */
+  .cronometro {
+    font-family: "Courier New", Courier, monospace; /* Fuente monoespaciada similar a un cronómetro */
+    font-size: 2em; /* Tamaño grande */
+    margin-top: 10px; /* Espacio entre el mensaje y el cronómetro */
+  }
+  
