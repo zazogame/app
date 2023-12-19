@@ -53,7 +53,7 @@ p{
   cursor: move;
   background: #697276;
   color: white;
-  font-size: 5%;
+  font-size: 3vh;
   overflow: hidden; /* Recorta el contenido si es demasiado largo */
   white-space: nowrap; /* Evita que el texto se divida en varias líneas */
   text-overflow: ellipsis; /* Agrega puntos suspensivos (...) cuando el texto está recortado */
@@ -62,7 +62,7 @@ p{
 /* Agregar estilos para pantallas más pequeñas (menos de 600px de ancho) */
 @media (max-width: 600px) {
   .example-box {
-    font-size: 5%; /* Ajusta el tamaño de la fuente para pantallas más pequeñas si es necesario */
+    font-size: 3vh; /* Ajusta el tamaño de la fuente para pantallas más pequeñas si es necesario */
   }
 }
 
