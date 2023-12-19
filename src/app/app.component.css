@@ -5,12 +5,10 @@
   
   .container {
     text-align: center;
-    padding: 20px;
     border: 2px solid limegreen;
     border-radius: 5px;
     background-color: black;
     box-shadow: 0 0 10px limegreen;
-    height: 100vh;
   }
   .titulo{
     font-size: 6vh;
@@ -19,13 +17,17 @@
     color: limegreen;
     font-family: 'Courier New', Courier, monospace;
     font-size: 3vh;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   
   /* Opcional: Estilo para el botón */
   button {
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 5px 10px;
+    font-size: 4vh;
     background-color: limegreen;
+    margin-bottom: 10px;
+    width: 70%;
     color: black;
     border: none;
     cursor: pointer;

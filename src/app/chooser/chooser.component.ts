@@ -12,11 +12,11 @@ import { FinaltestComponent } from '../finaltest/finaltest.component';
   styleUrl: './chooser.component.css'
 })
 export class ChooserComponent implements OnInit{
-  events = ['Salida de Animal Crossing 1','Estreno Harry Potter 1', 'Estreno Attack On Titan', 'Aitana entra a OT', 'Nos confinan por el Covid'];
-  correctOrder = ['Salida de Animal Crossing 1','Estreno Harry Potter 1', 'Estreno Attack On Titan', 'Aitana entra a OT', 'Nos confinan por el Covid'];
+  events = ['Salida Animal Crossing 1','Estreno Harry Potter 1', 'Estreno Attack On Titan', 'Aitana entra a OT', 'Confinamiento Covid'];
+  correctOrder = ['Salida Animal Crossing 1','Estreno Harry Potter 1', 'Estreno Attack On Titan', 'Aitana entra a OT', 'Confinamiento Covid'];
   mostrarMensajeError = false;
   cuentaAtras = 10;
-  formatoCuentaAtras = '00:10.0';
+  formatoCuentaAtras = '00:10';
   showPuzzle: boolean = false;
   mostrarCorrecto = false;
   ultimopuzzle: boolean = false;
@@ -70,7 +70,7 @@ export class ChooserComponent implements OnInit{
       if (this.cuentaAtras <= 0) {
         clearInterval(intervalId);
         this.cuentaAtras = 10; // Reiniciar la cuenta atrás para la próxima vez
-        this.formatoCuentaAtras = '00:10.0'; // Reiniciar el formato
+        this.formatoCuentaAtras = '00:10'; // Reiniciar el formato
       }
     }, 100);
   }

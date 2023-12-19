@@ -1,20 +1,18 @@
-div {
-    font-family: 'Courier New', Courier, monospace;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 10px;
-  }
+
   
   p {
     color: #00ff00;
     margin-bottom: 10px;
+    font-size: 3vh;
   }
   
   input {
     background-color: #0f0f0f;
     color: #00ff00;
     border: 1px solid #00ff00;
-    padding: 5px;
+    width: 90%;
+    height: 20px;
+    margin-bottom: 5px;
   }
   
   button {

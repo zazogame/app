@@ -1,20 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-songtest',
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './songtest.component.html',
-  styleUrl: './songtest.component.css'
+  styleUrls: ["./songtest.component.css", "/node_modules/ngx-toastr/toastr.css"]
 })
-export class SongtestComponent {   fraseCeslebre = '"El 1_________ nunca cae lejos del árbol. El 2__________ tampoco."';
-palabrasReemplazar: string[] = ['', '']; // Palabras que se deben reemplazar
-palabrasIngresadas: string[] = ['', ''];
+export class SongtestComponent {   fraseCeslebre = '"Noche 1_________, toda la noche entera. Hay una 2____ que tela, pero, ven con quien quieras. Cógeme la 4______, que bailamos la 5_____ tú y yo"';
+palabrasReemplazar: string[] = ['ochentera', 'cola', 'cadera', 'lenta']; 
+palabrasIngresadas: string[] = ['','','',''];
 resultado = '';
 @Output() cambioUltimoPuzzle = new EventEmitter<boolean>();
 
+constructor(private toast: NgToastService){
+
+}
 comprobarPalabras() {
   let todasCorrectas = true;
 

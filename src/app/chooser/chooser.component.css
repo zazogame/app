@@ -10,9 +10,8 @@ body {
   background-color: #111;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  width: 100%;
   text-align: center;
-  width: 80%;
   max-width: 100%; /* Hacer que el contenedor sea 100% del ancho */
   margin: 20px auto; /* Centrar el contenedor en la parte superior */
 }
@@ -26,9 +25,11 @@ h2{
 }
 p{
   font-size: 2.5vh;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .example-list {
-  width: 100%;
+  width: 90%;
   border: solid 1px #444b4d;
   min-height: 60px;
   display: block;
@@ -36,11 +37,13 @@ p{
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .example-box {
-  padding: 20px 10px;
   border-bottom: solid 1px #444b4d;
+  padding: 5px;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: row;
@@ -50,7 +53,7 @@ p{
   cursor: move;
   background: #697276;
   color: white;
-  font-size: 2vh; /* Ajusta el tamaño de la fuente según tu preferencia */
+  font-size: 5%;
   overflow: hidden; /* Recorta el contenido si es demasiado largo */
   white-space: nowrap; /* Evita que el texto se divida en varias líneas */
   text-overflow: ellipsis; /* Agrega puntos suspensivos (...) cuando el texto está recortado */
@@ -59,7 +62,7 @@ p{
 /* Agregar estilos para pantallas más pequeñas (menos de 600px de ancho) */
 @media (max-width: 600px) {
   .example-box {
-    font-size: 14px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas si es necesario */
+    font-size: 5%; /* Ajusta el tamaño de la fuente para pantallas más pequeñas si es necesario */
   }
 }
 
@@ -93,11 +96,12 @@ p{
 
 button {
   background-color: #4caf50;
+  width: 40%;
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 3vh;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px; /* Espacio superior para separar el botón de la lista en dispositivos móviles */

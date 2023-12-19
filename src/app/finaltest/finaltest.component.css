@@ -1,14 +1,4 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #282c34;
-  color: #61dafb;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+
 
 /* Estilos para el contenedor de Pokémon */
 .pokemon-container {
@@ -18,8 +8,7 @@ body {
 
 /* Estilos para la imagen de Pokémon */
 .pokemon-image {
-  height: 200px;
-  width: 200px;
+  width: 50%;
   border: 2px solid limegreen;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -33,12 +22,12 @@ body {
 
 /* Estilos para el input de Pokémon */
 .pokemon-input {
-  padding: 8px;
   border: 2px solid limegreen;
   border-radius: 5px;
   background-color: #282c34;
   color: white;
   margin-bottom: 10px;
+  width: 90%;
 }
 
 /* Estilos para el botón de Pokémon */
@@ -48,12 +37,19 @@ body {
   color: #282c34;
   border: none;
   border-radius: 5px;
+  font-size: 3.5vh;
   cursor: pointer;
+  margin-bottom: 5px;
 }
-
+label,p{
+  font-size: 3vh;
+}
 /* Estilos para el botón de reset */
 .reset-button {
-  padding: 10px;
+  margin-top: 0px;
+  padding: 5px;
+  font-size: 3vh;
+  width: 50%;
   background-color: #c34a4a;
   color: white;
   border: none;

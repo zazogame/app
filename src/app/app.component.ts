@@ -6,11 +6,11 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SongtestComponent } from './songtest/songtest.component';
 import { FormsModule } from '@angular/forms';
 import { TimerService } from './timer.service';
-
+import { NgToastModule } from 'ng-angular-popup';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet , ChooserComponent, DragDropModule, SongtestComponent, FormsModule],
+  imports: [CommonModule, RouterOutlet , ChooserComponent, DragDropModule, SongtestComponent, FormsModule, NgToastModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

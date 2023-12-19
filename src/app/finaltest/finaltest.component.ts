@@ -21,7 +21,7 @@ export class FinaltestComponent implements OnInit{
   currentPokemonName: string | undefined;
   mostrarMensajeError = false;
   cuentaAtras = 10;
-  formatoCuentaAtras = '00:10.0';
+  formatoCuentaAtras = '00:10';
   aciertos: number = 0;
   timerValue: number = 0;
   private timerSubscription: Subscription | undefined;
@@ -53,7 +53,7 @@ export class FinaltestComponent implements OnInit{
       alert('¡Correcto! ¡Ese es el Pokémon correcto!');
       this.aciertos++;
       if (this.aciertos < 3) {
-        this.resetPokemon(1);
+        this.getRandomPokemonImage();
       }
       else{
         this.timerService.stopTimer();
@@ -66,19 +66,29 @@ export class FinaltestComponent implements OnInit{
   }
 
   resetPokemon(timeottime=10000): void {
-    this.isChecking = true;
-    this.mostrarMensajeError = true;
-    this.iniciarCuentaAtras();
-    setTimeout(() => {
+    // Reiniciar la cuenta atrás y el formato
+  this.cuentaAtras = 10;
+  this.formatoCuentaAtras = '00:10';
+
+  this.isChecking = true;
+  this.mostrarMensajeError = true;
+
+  const intervalId = setInterval(() => {
+    this.cuentaAtras -= 0.1;
+    this.cuentaAtras = Math.round(this.cuentaAtras * 10) / 10;
+
+    this.formatoCuentaAtras = this.formatoTiempo(this.cuentaAtras);
+
+    // Si la cuenta atrás llega a 0, detener el intervalo
+    if (this.cuentaAtras <= 0) {
+      clearInterval(intervalId);
+      this.cuentaAtras = 10; // Reiniciar la cuenta atrás para la próxima vez
+      this.formatoCuentaAtras = '00:10'; // Reiniciar el formato
       this.mostrarMensajeError = false;
       this.isChecking = false;
       this.getRandomPokemonImage();
-    }, timeottime);
-  }
-
-  finalizarJuego(): void {
-    // Lógica para finalizar el juego (recargar la página, por ejemplo)
-    location.reload();
+    }
+  }, 100);
   }
 
   iniciarCuentaAtras(): void {
@@ -92,7 +102,7 @@ export class FinaltestComponent implements OnInit{
       if (this.cuentaAtras <= 0) {
         clearInterval(intervalId);
         this.cuentaAtras = 10; // Reiniciar la cuenta atrás para la próxima vez
-        this.formatoCuentaAtras = '00:10.0'; // Reiniciar el formato
+        this.formatoCuentaAtras = '00:10'; // Reiniciar el formato
       }
     }, 100);
   }
