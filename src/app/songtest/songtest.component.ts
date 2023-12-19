@@ -7,7 +7,7 @@ import { NgToastService } from 'ng-angular-popup';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './songtest.component.html',
-  styleUrls: ["./songtest.component.css", "/node_modules/ngx-toastr/toastr.css"]
+  styleUrls: ["./songtest.component.css"]
 })
 export class SongtestComponent {   fraseCeslebre = '"Noche 1_________, toda la noche entera. Hay una 2____ que tela, pero, ven con quien quieras. Cógeme la 4______, que bailamos la 5_____ tú y yo"';
 palabrasReemplazar: string[] = ['ochentera', 'cola', 'cadera', 'lenta']; 
